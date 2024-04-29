@@ -16,7 +16,7 @@ const EmptyState = ({ title, subtitle }) => {
       <Text className="text-xl text-center font-psemibold text-white mt-2">
         {title}
       </Text>
-      <Text className="text-sm font-pmedium text-gray-100">{subtitle}</Text>
+      <Text className="text-sm font-pmedium text-gray-100 text-center my-4">{subtitle}</Text>
 
       <CustomButton
         title="Post a Video!"
