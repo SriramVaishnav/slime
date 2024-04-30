@@ -9,8 +9,11 @@ import EmptyState from '../../components/EmptyState';
 import { getAllPosts, getLatestPosts } from '../../lib/appwrite';
 import useAppwrite from '../../lib/useAppwrite';
 import VideoCard from '../../components/VideoCard';
+import { useGlobalContext } from '../../context/GlobalProvider';
 
 const Home = () => {
+
+  const { user, setUser, setIsLogged } = useGlobalContext();
 
   const { data: posts, refetch } = useAppwrite(getAllPosts);
   const { data: latestPosts } = useAppwrite(getLatestPosts);
@@ -39,8 +42,8 @@ const Home = () => {
                 <Text className="font-pmedium text-sm text-gray-100">
                   Welcome Back
                 </Text>
-                <Text className="text-2xl font-psemibold text-white">
-                  Sriram
+                <Text className="text-2xl font-psemibold text-white mt-2">
+                  {user?.username}
                 </Text>
               </View>
 
